@@ -1,0 +1,16 @@
+drug_name,company,country,patent_expiry_year,annual_revenue_usd_bn,therapy_area,drug_type,generic_available
+Jardiance,Boehringer Ingelheim,Germany,2025,5.0,Diabetes,SGLT2 Inhibitor,No
+Trajenta,Boehringer Ingelheim,Germany,2025,1.2,Diabetes,DPP-4 Inhibitor,No
+Ozempic,Novo Nordisk,Denmark,2031,13.9,Diabetes,GLP-1 Agonist,No
+Trulicity,Eli Lilly,USA,2027,7.4,Diabetes,GLP-1 Agonist,No
+Januvia,Merck & Co,USA,2023,4.1,Diabetes,DPP-4 Inhibitor,Yes
+Farxiga,AstraZeneca,UK,2026,3.8,Diabetes,SGLT2 Inhibitor,No
+Invokana,Johnson & Johnson,USA,2024,1.1,Diabetes,SGLT2 Inhibitor,No
+Victoza,Novo Nordisk,Denmark,2023,2.3,Diabetes,GLP-1 Agonist,Yes
+Rybelsus,Novo Nordisk,Denmark,2031,2.1,Diabetes,GLP-1 Agonist,No
+Jardiance HF,Boehringer Ingelheim,Germany,2027,1.8,Diabetes,SGLT2 Inhibitor,No
+Toujeo,Sanofi,France,2026,1.5,Diabetes,Insulin,No
+Tresiba,Novo Nordisk,Denmark,2029,1.4,Diabetes,Insulin,No
+Xigduo,AstraZeneca,UK,2026,0.9,Diabetes,SGLT2+Metformin,No
+Synjardy,Boehringer Ingelheim,Germany,2025,0.8,Diabetes,SGLT2+Metformin,No
+Mounjaro,Eli Lilly,USA,2036,5.2,Diabetes,GLP-1+GIP Agonist,No
