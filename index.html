@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vansh Kaithwas - Patent Project</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #f5f5f5;
+    color: #222;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* simple nav - no blur effects, no fancy stuff */
+  nav {
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 14px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav a {
+    text-decoration: none;
+    color: #444;
+    font-size: 13px;
+    margin-left: 20px;
+  }
+  nav a:hover { color: #000; }
+  .nav-name { font-weight: 700; font-size: 15px; color: #1a1a1a; }
+
+  .container {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* hero - simple, direct */
+  .hero {
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 60px 24px 48px;
+  }
+  .hero .container {}
+
+  .hero-label {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 14px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    color: #1a1a1a;
+  }
+
+  .hero p {
+    color: #555;
+    max-width: 560px;
+    margin-bottom: 28px;
+    font-size: 15px;
+  }
+
+  .hero-links { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
+
+  .btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .btn-dark { background: #1a1a1a; color: #fff; }
+  .btn-dark:hover { background: #333; }
+  .btn-outline {
+    background: #fff;
+    color: #1a1a1a;
+    border: 1.5px solid #ccc;
+  }
+  .btn-outline:hover { border-color: #999; }
+
+  /* stats - simple boxes */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 8px;
+  }
+  .stat-box {
+    background: #f8f8f8;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 16px;
+    text-align: center;
+  }
+  .stat-box .num {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #1a3a5c;
+  }
+  .stat-box .num span { color: #c0392b; }
+  .stat-box .lbl {
+    font-size: 11px;
+    color: #888;
+    margin-top: 3px;
+  }
+
+  /* sections */
+  .section {
+    padding: 52px 24px;
+    border-bottom: 1px solid #ddd;
+  }
+  .section:last-child { border-bottom: none; }
+
+  .section h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+  }
+
+  .section p {
+    color: #555;
+    line-height: 1.75;
+    margin-bottom: 14px;
+    max-width: 660px;
+  }
+  .section p strong { color: #222; }
+
+  /* finding box */
+  .finding {
+    background: #fff8f7;
+    border: 1px solid #f0c0bc;
+    border-left: 3px solid #c0392b;
+    border-radius: 0 6px 6px 0;
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+  .finding p { color: #333; margin: 0; }
+  .finding strong { color: #c0392b; }
+
+  /* file cards */
+  .files { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 8px; }
+  .file-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 18px 20px;
+  }
+  .file-card:hover { border-color: #aaa; }
+  .file-name {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 6px;
+  }
+  .file-card h4 { font-size: 14px; font-weight: 600; margin-bottom: 5px; }
+  .file-card p { font-size: 13px; color: #666; margin: 0; line-height: 1.5; }
+
+  /* code block */
+  .code {
+    background: #1e1e1e;
+    border-radius: 6px;
+    padding: 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12.5px;
+    line-height: 1.75;
+    overflow-x: auto;
+    margin: 20px 0;
+  }
+  .kw { color: #569cd6; }
+  .fn { color: #dcdcaa; }
+  .st { color: #ce9178; }
+  .cm { color: #6a9955; }
+  .tb { color: #4ec9b0; }
+
+  /* skills */
+  .skills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .skill {
+    font-size: 12px;
+    background: #eef2f7;
+    color: #1a3a5c;
+    border: 1px solid #ccd8e8;
+    padding: 4px 12px;
+    border-radius: 4px;
+  }
+
+  /* about section - simpler */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .note-box {
+    background: #1a3a5c;
+    border-radius: 6px;
+    padding: 24px;
+    color: #fff;
+  }
+  .note-box .note-label {
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 12px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .note-box p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.85);
+    margin: 0;
+    font-style: italic;
+  }
+  .note-box strong { color: #fff; font-style: normal; }
+
+  footer {
+    background: #fff;
+    border-top: 1px solid #ddd;
+    padding: 24px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  footer p { font-size: 13px; color: #888; }
+  footer a { font-size: 13px; color: #555; text-decoration: none; margin-left: 16px; }
+  footer a:hover { color: #000; }
+
+  @media (max-width: 600px) {
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .files { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: 1fr; }
+    nav a { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-name">Vansh Kaithwas</span>
+  <div>
+    <a href="#finding">Finding</a>
+    <a href="#files">Files</a>
+    <a href="#about">About</a>
+    <a href="https://github.com/vanshkaithwas">GitHub</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="container">
+    <div class="hero-label">Class 12 · Commerce + IT + IP · India</div>
+    <h1>Diabetes Drug<br>Patent Cliff Analyzer</h1>
+    <p>
+      I studied Pandas and SQL in Class 12 IT. This is me trying to use those skills on something from my Commerce and IP classes — figuring out which diabetes drugs are about to lose patent protection and how much money is at risk.
+    </p>
+    <div class="hero-links">
+      <a href="https://github.com/vanshkaithwas/diabetes-patent-cliff" class="btn btn-dark">GitHub Repo</a>
+      <a href="#finding" class="btn btn-outline">See what I found</a>
+    </div>
+    <div class="stats">
+      <div class="stat-box">
+        <div class="num">15</div>
+        <div class="lbl">drugs tracked</div>
+      </div>
+      <div class="stat-box">
+        <div class="num">$52<span>B</span></div>
+        <div class="lbl">revenue analyzed</div>
+      </div>
+      <div class="stat-box">
+        <div class="num">2026</div>
+        <div class="lbl">peak cliff year</div>
+      </div>
+      <div class="stat-box">
+        <div class="num">$7<span>B</span></div>
+        <div class="lbl">BI risk in 2025</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY -->
+<div class="section">
+  <div class="container">
+    <h2>Why I made this</h2>
+    <p>
+      In IP class we covered how pharmaceutical patents work — companies get around 20 years of exclusivity on a drug. After that, generic manufacturers can copy it and sell it way cheaper. The original company loses most of its revenue really fast. This is called a patent cliff.
+    </p>
+    <p>
+      I wanted to see which diabetes drugs were actually facing this right now. I picked diabetes because it's one of the biggest drug markets globally. And I focused on <strong>Boehringer Ingelheim</strong> specifically because they're a major German pharma company — I'm applying to TUM so understanding German companies felt relevant.
+    </p>
+    <p>
+      The tools I used — Python, Pandas, SQL — are all from my Class 12 IT subject. I just applied them to this instead of the usual school practicals.
+    </p>
+  </div>
+</div>
+
+<!-- FINDING -->
+<div class="section" id="finding">
+  <div class="container">
+    <h2>What I found</h2>
+    <div class="finding">
+      <p>Boehringer Ingelheim has <strong>three diabetes drugs expiring in 2025</strong> — Jardiance, Synjardy, and Trajenta. That's <strong>$7B in one year</strong> facing generic competition. I didn't expect that much concentrated in a single year for one company.</p>
+    </div>
+    <p>
+      2026 is actually the worst year overall — Farxiga, Toujeo and others expire then, putting over $15B at risk at once. Novo Nordisk on the other hand is in a pretty safe position, most of their big drugs don't expire until 2031+.
+    </p>
+    <p>
+      I also did a quick German vs non-German comparison. German companies (basically just Boehringer Ingelheim here) hold about 14% of the tracked revenue, almost all from their SGLT2 inhibitor drugs.
+    </p>
+  </div>
+</div>
+
+<!-- FILES -->
+<div class="section" id="files">
+  <div class="container">
+    <h2>Project files</h2>
+    <div class="files">
+      <div class="file-card">
+        <div class="file-name">diabetes_patents.csv</div>
+        <h4>Dataset</h4>
+        <p>15 drugs I put together from USPTO records, FDA Orange Book, and company reports. Had to cross-check a few expiry dates manually.</p>
+      </div>
+      <div class="file-card">
+        <div class="file-name">analysis.py</div>
+        <h4>Python Analysis</h4>
+        <p>Pandas for cleaning and groupby. Matplotlib for 3 charts. Classifies each drug by how urgent the expiry is.</p>
+      </div>
+      <div class="file-card">
+        <div class="file-name">queries.sql</div>
+        <h4>SQL Queries</h4>
+        <p>7 queries on the dataset. Used GROUP BY, HAVING, and CASE WHEN — the last one I had to look up.</p>
+      </div>
+      <div class="file-card">
+        <div class="file-name">README.md</div>
+        <h4>Documentation</h4>
+        <p>What the project is, what I found, how to run it, and what I'd add next.</p>
+      </div>
+    </div>
+
+    <div class="code">
+<span class="cm"># classifying each drug by urgency</span>
+<span class="cm"># came up with these ranges myself</span>
+<span class="kw">def</span> <span class="fn">classify_urgency</span>(years):
+    <span class="kw">if</span> years <= 0:
+        <span class="kw">return</span> <span class="st">"Already Expired"</span>
+    <span class="kw">elif</span> years <= 2:
+        <span class="kw">return</span> <span class="st">"Expiring Soon"</span>
+    <span class="kw">elif</span> years <= 5:
+        <span class="kw">return</span> <span class="st">"Near Term"</span>
+    <span class="kw">else</span>:
+        <span class="kw">return</span> <span class="st">"Long Term"</span>
+
+df[<span class="st">"urgency"</span>] = df[<span class="st">"years_until_expiry"</span>].<span class="fn">apply</span>(classify_urgency)
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="section" id="about">
+  <div class="container">
+    <h2>About me</h2>
+    <div class="about-grid">
+      <div>
+        <p>I'm Vansh Kaithwas, Class 12 student from India studying Commerce, IP, and IT. Applying to German universities including TUM.</p>
+        <p>This is an independent project — not a school assignment. I wanted to see if I could connect what I was learning across three different subjects.</p>
+        <div class="skills">
+          <span class="skill">Python</span>
+          <span class="skill">Pandas</span>
+          <span class="skill">SQL</span>
+          <span class="skill">Matplotlib</span>
+          <span class="skill">SQLite</span>
+          <span class="skill">IP Law</span>
+          <span class="skill">Patent Research</span>
+        </div>
+      </div>
+      <div class="note-box">
+        <div class="note-label">For applications</div>
+        <p>"As a Class 12 student studying Commerce and IP, I applied <strong>Python and SQL from my IT curriculum</strong> to analyze pharmaceutical patent data — finding that <strong>Boehringer Ingelheim faces $7B in diabetes revenue at risk in 2025 alone.</strong> Built independently to connect three subjects I study separately in school."</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>Vansh Kaithwas — Class 12, Commerce + IT + IP</p>
+  <div>
+    <a href="https://github.com/vanshkaithwas">GitHub</a>
+    <a href="#">LinkedIn</a>
+  </div>
+</footer>
+
+</body>
+</html>
