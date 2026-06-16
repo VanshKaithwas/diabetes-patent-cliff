@@ -67,10 +67,9 @@ I compiled this from USPTO patent records, the FDA Orange Book, and company annu
 
 ## Why I focused on Germany
 
-Boehringer Ingelheim is one of Germany's biggest pharma companies and they're privately owned which is unusual for a company this size. Since I'm applying to TUM I wanted to understand the German pharma industry specifically.
+Boehringer Ingelheim is one of Germany's biggest pharma companies and they're privately owned which is unusual for a company this size. Since I'm applying to German universities I wanted to understand the German pharma industry specifically.
 
 ---
 
 Vansh Kaithwas
-Class 12 — Commerce + Information Technology + IP
-[vanshkaithwas1994@gmail.com].
+Class 12 — Commerce + Information Technology + IP.
